@@ -41,12 +41,11 @@ public class RushHour {
                         Board[newVehicle.getY()][newVehicle.getX() - j - 1].isOccupied = true;
                     }
                 }
-                
-                
+                // check all the cars for potential moves (empty adjacent spots)
+                // put those in a queue 
+                // pop the moves out and search 
             }
-            
-                        
-            
+ 
         }
         catch (Exception ex) {
             
