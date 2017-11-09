@@ -14,7 +14,7 @@ public class RushHour {
     
     static ArrayList<Vehicle> cars;
     
-    public ArrayList<Move> examineAllCars(Move currentMove) {
+    public static ArrayList<Move> examineAllCars(Move currentMove) {
         ArrayList<Move> newMoves = new ArrayList<Move>();
         for(Vehicle car: cars) {
             String board = new String(currentMove.board);
@@ -111,7 +111,7 @@ public class RushHour {
             File in = new File("C:\\Users\\Master\\Documents\\NetBeansProjects\\RushHour\\src\\problemFile.txt");
             Scanner inFile = new Scanner(in);
             int numberOfCars = inFile.nextInt();
-            ArrayList<Vehicle> cars = new ArrayList();
+            cars = new ArrayList();
             char[] board = new char[36];
             Arrays.fill(board, 'x');
             ArrayDeque<Move> moveQueue = new ArrayDeque<Move>();
@@ -145,7 +145,7 @@ public class RushHour {
             moveQueue.addLast(firstMove);
             while(!moveQueue.isEmpty() || moveQueue.peek().board[17] == 'a'){
                 Move checkMove = moveQueue.removeFirst();
-                ArrayList<Move> newMoves = rh.examineAllCars(checkMove);
+                ArrayList<Move> newMoves = examineAllCars(checkMove);
                 for(Move m :newMoves){
                     moveQueue.addLast(m);
                 }
