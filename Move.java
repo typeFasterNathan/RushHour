@@ -9,9 +9,8 @@ package rushhour;
  *
  * @author Master
  */
-public class Vehicle {
-    Boolean IsCar;
-    Character Letter;
-    String Color;
-    Boolean IsHorizonatal;
+public class Move {
+    public char[] board;
+    public String move;
+    public Move previous;
 }
